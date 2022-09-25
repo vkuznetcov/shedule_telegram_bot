@@ -1,8 +1,8 @@
 import telebot
+import spreadsheet
 from telebot import types
 
 token = '5692398615:AAFeVNfA4UZGbTE0-hJY9rexq2AI2DCF2Y4'
-spreadsheet = 'https://docs.google.com/spreadsheets/d/1N2fw5LiybpWO8TnL6zg12d2Sp9i5b3wmK2GP4KMbJCw/edit?usp=sharing'
 bot = telebot.TeleBot(token)
 
 
