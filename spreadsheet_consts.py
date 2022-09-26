@@ -69,7 +69,7 @@ def parse_index(cell_value: str):
         return COL_19_00
     if cell_value == '19:30 мск':
         return COL_19_30
-    if cell_value == '12:00 мск':
+    if cell_value == '20:00 мск':
         return COL_20_00
-    if cell_value == '12:30 мск':
+    if cell_value == '20:30 мск':
         return COL_20_30
