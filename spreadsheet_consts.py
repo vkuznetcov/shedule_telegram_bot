@@ -1,32 +1,84 @@
 # day of the week indices
-ROW_MONDAY = 2
-ROW_TUESDAY = 3
-ROW_WEDNESDAY = 4
-ROW_THURSDAY = 5
-ROW_FRIDAY = 6
-ROW_SATURDAY = 7
+ROW_MONDAY = 1
+ROW_TUESDAY = 2
+ROW_WEDNESDAY = 3
+ROW_THURSDAY = 4
+ROW_FRIDAY = 5
+ROW_SATURDAY = 6
 
 # time indices
-COL_9_00 = 2
-COL_10_00 = 3
-COL_11_00 = 4
-COL_12_00 = 5
-COL_13_00 = 6
-COL_14_00 = 7
-COL_15_00 = 8
-COL_16_00 = 9
-COL_16_30 = 10
-COL_17_00 = 11
-COL_17_30 = 12
-COL_18_00 = 13
-COL_18_30 = 14
-COL_19_00 = 15
-COL_19_30 = 16
-COL_20_00 = 17
-COL_20_30 = 18
+COL_9_00 = 0
+COL_10_00 = 1
+COL_11_00 = 2
+COL_12_00 = 3
+COL_13_00 = 4
+COL_14_00 = 5
+COL_15_00 = 6
+COL_16_00 = 7
+COL_16_30 = 8
+COL_17_00 = 9
+COL_17_30 = 10
+COL_18_00 = 11
+COL_18_30 = 12
+COL_19_00 = 13
+COL_19_30 = 14
+COL_20_00 = 15
+COL_20_30 = 16
 
 
-def parse_index(cell_value: str):
+def parse_days_index(day_index: int):
+    if day_index == ROW_MONDAY:
+        return 'Понедельник'
+    if day_index == ROW_TUESDAY:
+        return 'Вторник'
+    if day_index == ROW_WEDNESDAY:
+        return 'Среда'
+    if day_index == ROW_THURSDAY:
+        return 'Четверг'
+    if day_index == ROW_FRIDAY:
+        return 'Пятница'
+    if day_index == ROW_SATURDAY:
+        return 'Суббота'
+
+
+def parse_time_index(time_index: int):
+    if time_index == COL_9_00:
+        return '9:00 мск'
+    if time_index == COL_10_00:
+        return '10:00 мск'
+    if time_index == COL_11_00:
+        return '11:00 мск'
+    if time_index == COL_12_00:
+        return '12:00 мск'
+    if time_index == COL_13_00:
+        return '13:00 мск'
+    if time_index == COL_14_00:
+        return '14:00 мск'
+    if time_index == COL_15_00:
+        return '15:00 мск'
+    if time_index == COL_16_00:
+        return '16:00 мск'
+    if time_index == COL_16_30:
+        return '16:30 мск'
+    if time_index == COL_17_00:
+        return '17:00 мск'
+    if time_index == COL_17_30:
+        return '17:30 мск'
+    if time_index == COL_18_00:
+        return '18:00 мск'
+    if time_index == COL_18_30:
+        return '18:30 мск'
+    if time_index == COL_19_00:
+        return '19:00 мск'
+    if time_index == COL_19_30:
+        return '19:30 мск'
+    if time_index == COL_20_00:
+        return '20:00 мск'
+    if time_index == COL_20_30:
+        return '20:30 мск'
+
+
+def parse_value(cell_value: str):
     if cell_value == 'Понедельник':
         return ROW_MONDAY
     if cell_value == 'Вторник':
