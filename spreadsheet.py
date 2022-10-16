@@ -25,11 +25,10 @@ def get_free_time(weekday: str):
 
 
 # записывает пользователя в ячейку со свободным временем
-def update_user_schedule(username: str, weekday: str, time: str):
+def update_user_schedule(user_info: str, weekday: str, time: str):
     worksheet.update_cell(parse_value(weekday) + 1
                           , parse_value(time) + 2
-                          , '@' + username)
-
+                          , user_info)
 
 # if __name__ == '__main__':
 #     print(get_free_time('Понедельник'))
