@@ -8,6 +8,7 @@ from spreadsheet_consts import parse_value, parse_days_index, parse_time_index
 class ZeroEntries(Exception):
     pass
 
+
 class OccupiedEntry(Exception):
     pass
 
@@ -17,6 +18,13 @@ spreadsheet = 'https://docs.google.com/spreadsheets/d/1N2fw5LiybpWO8TnL6zg12d2Sp
 
 sh = gc.open_by_url(spreadsheet)
 worksheet = sh.get_worksheet(0)
+template = sh.get_worksheet(1)
+
+
+def drop_current_schedule():
+    cell_list = template.range('A1:Z50')
+    worksheet.update_cells(cell_list)
+    return 'successfully dropped schedule timetable'
 
 
 # возвращает список всех записей(занятых/незанятых) для конкретного дня

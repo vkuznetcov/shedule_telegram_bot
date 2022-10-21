@@ -29,11 +29,13 @@ def weekdays_markup():
                , types.KeyboardButton("Суббота"))
     return markup
 
+
 def create_entry(message):
     markup = weekdays_markup()
     markup.add(types.KeyboardButton('Отмена'))
     bot.send_message(message.chat.id, "Выберите день для новой записи 👇", reply_markup=markup)
     print(message.chat.id)
+
 
 @bot.message_handler(commands=['start'])
 def start_message(message, hello_message=True):
@@ -139,7 +141,6 @@ def message_reply(message):
             create_entry(message)
     elif message.text == 'Отмена':
         start_message(message, hello_message=False)
-
 
 
 print('bot started')
