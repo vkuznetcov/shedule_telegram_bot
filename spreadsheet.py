@@ -59,9 +59,9 @@ def get_free_time(weekday: str):
 # записывает пользователя в ячейку со свободным временем
 def update_user_schedule(user_info: str, weekday: str, time: str, delete=False):
     if delete:
-        cell_list = worksheet.range('A1:Z50')
-        cell_list[(parse_value(weekday) + 1) * 17 + parse_value(time) + 2].value = ''
-        worksheet.update_cells(cell_list)
+        weekday_num = parse_value(weekday)
+        time_num = parse_value(time)
+        worksheet.update_cell(weekday_num + 1, time_num + 2, '')
     else:
         value = worksheet.cell(parse_value(weekday) + 1, parse_value(time) + 2).value
         if worksheet.cell(parse_value(weekday) + 1, parse_value(time) + 2).value is not None:
